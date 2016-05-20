@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Felico</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!--调试阶段,取消缓存 -->
+    <meta http-equiv="cache-control" content="must-revalidate">
+    <!--develop -->
+<link rel="stylesheet" href="styles/dev/index.css">
+<link rel="stylesheet" href="styles/dev/mobile.css">
+    <!--DIST -->
+<!--     <link rel="stylesheet" href="styles/build/all.min.css" /> -->
+</head>
+
+<body>
+    <div class="page">
+        <!-- 选择图片页 -->
+        <!--    <div class="m-layer m-index">
+        <h1>请选择您的照片</h1>
+<a id="m-upload" href="#">点击上传</a>
+<input type="file" accept='image/*' class="m-upload-file photoInput" role="index">
+</div>-->
+        <div class="m-block">
+            <header class="bar bar-nav">
+                <a class="icon icon-left pull-left" to="effect"></a>
+                <h1 class="title">手机壳定制</h1>
+                <a class="pre-btn clearfix fr" role="save">
+                    <i class="iconfont">&#xe628;</i>
+                    <br>
+                    <span>保存</span>
+                </a>
+                <a class="del-btn clearfix fr" role="delete">
+                    <i class="iconfont">&#xe604;</i>
+                    <br>
+                    <span>删除</span>
+                </a>
+            </header>
+            <nav class="bar bar-tab m-toolbar">
+                <a class="tab-item active" href="#" role="picture">
+                    <span class="iconfont">&#xe627;</span>
+                </a>
+                <a class="tab-item" href="#" role="font">
+                    <span class="iconfont">&#xe626;</span>
+                </a>
+                <a class="tab-item" href="#" role="decoration">
+                    <span class="iconfont">&#xe625;</span>
+                </a>
+                <a class="tab-item" href="#" role="filter">
+                    <span class="iconfont">&#xe622;</span>
+                </a>
+                <!--                         <a class="tab-item" href="#" role="group">
+        <span class="iconfont">&#xe622;</span>
+    </a> -->
+                <div class="group-items">
+                    <!--  <a href="#" role="ctgroup">卡通合影</a> -->
+                    <!-- <a href="#" role="filter">个性滤镜</a> -->
+                    <!-- <a href="#" role="ctchange">卡通变身</a> -->
+                    <!-- <a href="#" role="frame">唯美相框</a> -->
+                </div>
+            </nav>
+            <div class="content">
+                <div>
+                    <img src="" id="mask-img">
+                    <canvas id='designer'></canvas>
+                    <canvas id="medium"></canvas>
+                </div>
+                <div class='m-content'>
+                </div>
+            </div>
+            <!--添加效果页 -->
+            <!--        <div class="m-layer m-effect">
+            <h1>请选择默认效果</h1>
+            <div class="effects">
+                <a href="#" role="ctgroup">卡通合影</a>
+                <a href="#" role="ctchange">卡通变身</a>
+                <a href="#" role="filter">个性滤镜</a>
+                <a href="#" role="frame">唯美相框</a>
+            </div>
+        </div>-->
+            <div class="m-layer m-preview">
+                <div class="page">
+                    <header class="bar bar-nav">
+                        <a class="icon icon-left pull-left" to="design"></a>
+                        <h1 class="title">预览</h1>
+                    </header>
+                    <div class="pre-block">
+                        <div class="pre-img">
+                            <img src="">
+                        </div>
+                    </div>
+                    <div class="pre-bottom">
+                        <a href="#" class="button button-big button-fill m-save">确认</a>
+                        <a href="#" class="button button-big m-back">再看一看</a>
+                    </div>
+                </div>
+            </div>
+            <div class="m-layer preload">
+                <div class="alert">
+                    <span>图片上传中...</span>
+                    <br>
+                    <img src="images/default.gif">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--     <div id="weixinTip">
+    <p>
+        <img src="images/live_weixin.png" alt="微信打开" style="width: 100%" />
+    </p>
+</div> -->
+
+    <!--***************************************************************************************** -->
+    <!--     DEVELOP-->
+    <script data-main="scripts/main" src="scripts/dev/lib/sea.js"></script>
+    <script src="scripts/dev/lib/fabric.js"></script>
+    <script src="scripts/dev/lib/plupload.full.min.js"></script>
+    <script src="scripts/dev/lib/qiniu.js"></script>
+    <script>
+    //local
+    seajs.config({
+        base: "./scripts/dev/",
+        alias: {
+            'zepto': 'lib/zepto',
+            'jquery': 'lib/jquery',
+            'lazyload': 'lib/lazyload'
+        }
+    });
+
+    seajs.use('./scripts/dev/main');
+    </script>
+    <!-- /DEVELOP-->
+
+    <!--***************************************************************************************** -->
+    <!-- BUILD
+    <script data-main="scripts/main" src="scripts/build/lib/sea.js"></script>
+    <script src="scripts/build/lib/fabric.js"></script>
+    <script src="scripts/build/lib/plupload.full.min.js"></script>
+    <script src="scripts/build/lib/qiniu.js"></script>
+    <script>
+    //local
+    seajs.config({
+        base: "./scripts/build/",
+        alias: {
+            'zepto': 'lib/zepto',
+            'jquery': 'lib/jquery',
+            'lazyload': 'lib/lazyload'
+        }
+    });
+
+    seajs.use('./scripts/build/main');
+    </script>-->
+    <!-- /BUILD-->
+</body>
+
+</html>
